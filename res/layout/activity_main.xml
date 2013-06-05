@@ -13,6 +13,33 @@
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/server_ip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Server IP: "
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <TextView
+            android:id="@+id/server_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/btn_connect"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/button1"
         android:layout_width="321dp"
@@ -56,12 +83,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:drawableTop="@color/purple" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Server IP:"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>
