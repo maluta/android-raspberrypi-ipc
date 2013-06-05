@@ -1,5 +1,6 @@
-* Server *
+### Server ###
 
-# cd server-raspberrypi/py
-# python PythonServer.py
+  $ cd server-raspberrypi/py
+  
+  $ python PythonServer.py
 
