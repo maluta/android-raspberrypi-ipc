@@ -58,7 +58,8 @@ public class MainActivity extends Activity {
 			ip = bundle.getString("ip_address");
 			t1.setText(ip);
 		} catch (NullPointerException ex) {
-			ip="192.168.1.7";
+			//ip="192.168.1.7";
+			ip="10.254.254.108";
 		}
 		t1.setText(ip);
 
@@ -91,7 +92,7 @@ public class MainActivity extends Activity {
 					b6.setVisibility(View.VISIBLE);
 					b7.setVisibility(View.VISIBLE);
 				}
-				//SetColors(1);
+
 			}
 		});
 
@@ -101,7 +102,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
-				//client.add(1, arg1)
+				try {
+					client.add(1, 1);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -111,6 +117,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(2, 2);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -120,6 +132,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(3, 3);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -128,6 +146,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(4, 4);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -137,6 +161,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(5, 5);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -146,6 +176,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(6, 6);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 
@@ -155,6 +191,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.e(TAG,""+v.getId());
+				try {
+					client.add(7, 7);
+				} catch (TException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 	}
