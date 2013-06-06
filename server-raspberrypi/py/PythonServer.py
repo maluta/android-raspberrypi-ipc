@@ -31,7 +31,7 @@ from thrift.transport import TSocket
 from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
-
+import subprocess
 class CalculatorHandler:
   def __init__(self):
     self.log = {}
@@ -40,6 +40,33 @@ class CalculatorHandler:
     print 'ping()'
 
   def add(self, n1, n2):
+    if n1 == 1: 
+        p = subprocess.Popen('fbv -u 1 colors/black.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+    if n1 == 2: 
+        p = subprocess.Popen('fbv -u 1 colors/blue.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
+    if n1 == 3: 
+        p = subprocess.Popen('fbv -u 1 colors/red.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
+    if n1 == 4: 
+        p = subprocess.Popen('fbv -u 1 colors/yellow.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
+    if n1 == 5: 
+        p = subprocess.Popen('fbv -u 1 colors/green.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
+    if n1 == 6: 
+        p = subprocess.Popen('fbv -u 1 colors/maroon.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
+    if n1 == 7: 
+        p = subprocess.Popen('fbv -u 1 colors/purple.png &', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        p.wait()
+        pass
     print 'add(%d,%d)' % (n1, n2)
     return n1+n2
 
