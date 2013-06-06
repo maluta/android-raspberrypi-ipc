@@ -58,8 +58,8 @@ public class MainActivity extends Activity {
 			ip = bundle.getString("ip_address");
 			t1.setText(ip);
 		} catch (NullPointerException ex) {
-			//ip="192.168.1.7";
-			ip="10.254.254.108";
+			ip="192.168.1.7";
+			//	ip="10.254.254.108";
 		}
 		t1.setText(ip);
 
@@ -71,17 +71,23 @@ public class MainActivity extends Activity {
 				boolean on = false;
 				Log.e(TAG,"connect");
 				//Toast.makeText(getApplicationContext(), "Connectando...", Toast.LENGTH_LONG).show();
+				if (button_connect.getText().equals("Connect")) {
+					try {
+						transport = new TSocket(ip, 9090);
+						transport.open();
 
-				try {
-					transport = new TSocket(ip, 9090);
-					transport.open();
-
-					protocol = new  TBinaryProtocol(transport);
-					client = new Calculator.Client(protocol);
-					on = true;
-				} catch (TException x) {
-					Log.e(TAG,"error on connecting");
-				} 
+						protocol = new  TBinaryProtocol(transport);
+						client = new Calculator.Client(protocol);
+						on = true;
+						button_connect.setText("Disconnect");
+					} catch (TException x) {
+						Log.e(TAG,"error on connecting");
+					} 
+				} else if (button_connect.getText().equals("Disconnect")) {
+					transport.close();
+					button_connect.setText("Connect");
+					on = false;
+				}
 
 				if (on) {
 					b1.setVisibility(View.VISIBLE);
@@ -91,6 +97,14 @@ public class MainActivity extends Activity {
 					b5.setVisibility(View.VISIBLE);
 					b6.setVisibility(View.VISIBLE);
 					b7.setVisibility(View.VISIBLE);
+				} else {
+					b1.setVisibility(View.INVISIBLE);
+					b2.setVisibility(View.INVISIBLE);
+					b3.setVisibility(View.INVISIBLE);
+					b4.setVisibility(View.INVISIBLE);
+					b5.setVisibility(View.INVISIBLE);
+					b6.setVisibility(View.INVISIBLE);
+					b7.setVisibility(View.INVISIBLE);
 				}
 
 			}
@@ -212,6 +226,7 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Log.e(TAG,""+item.getItemId());
 		Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
 		return super.onOptionsItemSelected(item);
 	}

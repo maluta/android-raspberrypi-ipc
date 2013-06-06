@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SettingsActivity" >
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:text="Server IP"
@@ -16,7 +16,7 @@
 
     <EditText
         android:id="@+id/edt_ipaddress"
-        android:layout_width="243dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="phone" >
 
@@ -25,7 +25,7 @@
 
     <Button
         android:id="@+id/btn_save_settings"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Save" />
 
